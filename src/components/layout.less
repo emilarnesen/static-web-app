@@ -1,0 +1,567 @@
+@import '~@sb1/ffe-core/less/ffe';
+@import 'fonts';
+@import 'header';
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'SB1-regular', arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  background: @ffe-farge-hvit;
+
+  @media (min-width: @breakpoint-md) {
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0;
+      background: @ffe-farge-vann;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+        width: 0;
+        background: rgba(0, 39, 118, 0.5);
+        border-radius: 4px;
+    }
+  }
+}
+
+p,
+div,
+ul,
+li {
+    font-family: 'SB1-regular', arial, sans-serif;
+    font-weight: normal;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'SB1-title-medium', arial, sans-serif;
+    font-weight: normal;
+}
+
+img {
+  max-width: 100%;
+}
+
+.smud-page {
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: @breakpoint-md) {
+    padding: @ffe-spacing-3xl 0;
+  }
+
+  &--1 {
+    background: @ffe-farge-vann;
+    color: @ffe-farge-hvit;
+  }
+
+  &--2 {
+    background: @ffe-farge-vann;
+    color: @ffe-farge-hvit;
+  }
+
+  &--3 {
+    background: @ffe-farge-syrin-70;  
+    align-items: flex-start;
+  }
+
+  &--4 {
+    background: @ffe-farge-vann;
+    color: @ffe-farge-hvit;
+  }
+
+  &__container {
+    max-width: 1280px;
+    margin: @ffe-spacing-sm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.smud-logo {
+  position: absolute;
+  right: @ffe-spacing-md;
+  bottom: @ffe-spacing-md;
+  max-width: 120px;
+
+  @media (min-width: @breakpoint-md) {
+    max-width: 210px;
+  }
+}
+
+.smud-c2a {
+  text-align: center;
+
+  &__button {
+    display: inline-block;
+    padding: @ffe-spacing-xs @ffe-spacing-sm;
+    background-color: transparent;
+    color: @ffe-farge-vann-30;
+    border: 2px solid @ffe-farge-vann-70;
+    border-radius: 25px;
+    transition: background-color @ffe-transition-duration @ffe-ease;
+    text-decoration: none;
+    margin: @ffe-spacing-xs @ffe-spacing-sm;
+
+    @media (max-width: (@breakpoint-md - 1)) {
+      display: block;
+      font-size: 1.4rem;
+      margin: @ffe-spacing-md 0;
+    }
+
+    &:hover {
+      background-color: @ffe-farge-natt;
+      border-color: @ffe-farge-vann-30;
+      color: @ffe-farge-hvit;
+    }
+  }
+}
+
+.smud-illustration {
+  right: @ffe-spacing-sm;
+  bottom: @ffe-spacing-sm;
+  max-width: 40%;
+  z-index: 0;
+  position: absolute;
+
+  @media (min-width: @breakpoint-sm) {
+    max-width: 200px;
+  }
+
+  @media (min-width: @breakpoint-lg) {
+    max-width: 240px;
+  }
+
+  &--phone {
+    right: auto;
+    left: @ffe-spacing-sm;
+  }
+}
+
+.smud-h1 {
+  font-size: 4rem;
+}
+
+.smud-h2 {
+  font-size: 2.25rem;
+  color: @ffe-farge-fjell;
+  margin-bottom: 3rem;
+  line-height: 1.3;
+  padding-right: 70px;
+  align-self: flex-start;
+
+  @media (min-width: @breakpoint-md) {
+    padding-right: 0;
+  }
+
+  &--stories {
+    color: @ffe-farge-hvit;
+    @media (min-width: @breakpoint-md) {
+      max-width: 60%;
+    }
+  }
+
+  .smud-program & {
+    @media (min-width: @breakpoint-md) {
+      align-self: center;
+    }
+  }
+}
+
+.smud-h3 {
+  font-size: 1.75rem;
+  line-height: 1.3;
+  color: @ffe-farge-fjell;
+}
+
+.smud-h4 {
+  font-size: 20px;
+  line-height: 1.3;
+  margin-bottom: .5rem;
+  color: @ffe-farge-fjell;
+}
+
+.smud-talks-container {
+  @media (min-width: @breakpoint-lg) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: @ffe-spacing-xl;
+  }
+}
+
+.smud-talks {
+  margin-bottom: @ffe-spacing-2xl;
+
+  &--part-2 {
+      margin-bottom: 350px;
+  }
+
+  &__time {
+    text-align: center;
+  }
+
+  &__time-start,
+  &__time-end {
+    @media (min-width: @breakpoint-lg) {
+      display: block;
+    }
+  }
+
+  &__time-start {
+    @media (max-width: (@breakpoint-lg - 1)) {
+      &::after {
+        content: " - ";
+      }
+    }
+  }
+
+  &__time-end {
+    @media (min-width: @breakpoint-lg) {
+      opacity: .5;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__talk {
+    background: @ffe-farge-hvit;
+    border-radius: @ffe-spacing-xs;
+    align-items: center;
+    padding: @ffe-spacing-xs;
+    flex-grow: 1;
+    margin-top: 50px;
+
+    &--intro {
+      background: @ffe-farge-syrin;
+      justify-items: start!important;
+
+      @media (max-width: (@breakpoint-lg - 1)) {
+        margin-top: @ffe-spacing-xs;
+      }
+    }
+
+    &--pause {
+      background: @ffe-farge-villblomst-70;
+      justify-items: start!important;
+
+      @media (max-width: (@breakpoint-lg - 1)) {
+        margin-top: @ffe-spacing-xs;
+      }
+    }
+
+    @media (min-width: @breakpoint-lg) {
+      display: inline-grid;
+      grid-template-columns: 100px 1fr;
+      margin-top: 0;
+      margin-left: 60px;
+    }
+
+    .smud-talks--part-2 & {
+      @media (min-width: @breakpoint-lg) {
+        grid-template-columns: 1fr 100px;
+        justify-items: end;
+        margin-left: 0;
+        margin-right: 60px;
+      }
+    }
+  }
+
+  &__talk-info {
+    @media (min-width: @breakpoint-lg) {
+      margin-left: -30px;
+      padding-right: @ffe-spacing-sm;
+    }
+
+    .smud-talks--part-2 & {
+      @media (min-width: @breakpoint-lg) {
+        margin-left: 0;
+        margin-right: -30px;
+        padding-right: 0;
+        padding-left: @ffe-spacing-sm;
+      }
+    }
+  }
+  
+  &__talk-title {
+    font-size: 20px;
+    margin: 0 0 @ffe-spacing-2xs 0;
+  }
+  &__talk-brief {
+    font-size: 14px;
+    margin: @ffe-spacing-xs 0;
+  }
+
+  &__speaker-title,
+  &__speaker-company {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  &__speaker-name{
+    margin: 0;
+    font-family: 'SB1-medium', arial, sans-serif;
+  }
+
+  &__item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: @ffe-spacing-xl;
+    align-items: stretch;
+
+    @media (min-width: @breakpoint-lg) {
+      margin-bottom: @ffe-spacing-lg;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .smud-talks--part-2 & {
+      @media (min-width: @breakpoint-lg) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &__speaker-image {
+    display: inline-grid;
+    margin-top: -50px;
+
+    @media (max-width: (@breakpoint-lg - 1)) {
+      justify-items: center;
+      width: 100%;
+
+      .smud-talks__talk--intro &,
+      .smud-talks__talk--pause & {
+        display: none;
+      }
+    }
+    
+    img {
+      width: 90px;
+      border-radius: 50%;
+    }
+
+    @media (min-width: @breakpoint-lg) {
+      margin-top: 0;
+      margin-left: -50px;
+    }
+
+    .smud-talks--part-2 & {
+      @media (min-width: @breakpoint-lg) {
+        order: 2;
+        margin-left: 0;
+        margin-right: -50px;
+      }
+    }
+  }
+}
+
+.smud-holdthedate {
+  text-align: center;
+  padding-right: 0;
+  color: @ffe-farge-hvit;
+  align-self: center;
+  margin-bottom: 0;
+
+  @media (max-width: (@breakpoint-md - 1)) {
+    time {
+      display: block;
+    }
+  }
+}
+
+.smud-sb1-network {
+  text-align: center;
+  padding-right: 0;
+  color: @ffe-farge-hvit;
+  font-size: 0.8rem;
+
+  span {
+    display: block;
+  }
+}
+
+.smud-register {
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  border-radius: 50%;
+  background-color: @ffe-farge-nordlys;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+  color: @ffe-farge-svart;
+  margin: @ffe-spacing-2xl @ffe-spacing-md;
+  transform: rotate(3deg);
+  transition: all @ffe-transition-duration @ffe-ease;
+
+  @media (min-width: @breakpoint-md) {
+    font-size: 2rem;
+    width: 400px;
+    height: 400px;
+    line-height: 400px;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: @ffe-farge-nordlys-30;
+    box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2);
+    transform: rotate(0deg);
+  }
+}
+
+.smud-email {
+  color: @ffe-farge-hvit;
+  font-family: 'SB1-medium', arial, sans-serif;
+}
+
+.a-smud-logo {
+  font-size: 60px;
+  display: flex;
+  align-items: flex-start;
+  height: 80px;
+
+  @media (min-width:@breakpoint-sm) {
+    font-size: 70px;
+    height: 90px;
+  }
+  
+  &__text{
+    display: inline-block;
+    position: relative;
+    font-family: 'SB1-title-medium', arial, sans-serif!important;
+  }
+
+  &__end{
+    text-align: right;
+    animation-name: u-space,u-space-end,u-space-theend;
+    animation-duration: 6s, 4s, 1s;
+    animation-timing-function: ease-in-out, ease, ease-in-out;
+    animation-delay: 0.5s, 5s, 9.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  
+  &__u {
+    animation-name: u-bounce, u-move;
+    animation-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0), ease;
+    animation-iteration-count: 1;
+    animation-duration: 1s, 4s;
+    animation-delay: 2s, 5s;
+    position: relative;
+  }
+  &__hale{
+    position: absolute;
+    left: 0;
+    opacity: 0;
+  }
+  &__u2{
+    animation: u2-move 4s ease 5.1s 1;
+  }
+  &__u3{
+    animation: u2-move 4s ease 5.15s 1;
+  }
+  &__u4{
+    animation: u2-move 4s ease 5.2s 1;
+  }
+  &__u5{
+    animation: u2-move 4s ease 5.25s 1;
+  }
+  &__u6{
+    animation: u2-move 4s ease 5.3s 1;
+  }
+  &__u7{
+    animation: u2-move 4s ease 5.35s 1;
+  }
+  &__year {
+    font-size: .5em;
+    margin-top: .3em;
+  }
+  
+  @keyframes u-bounce {
+    0%    { transform: translateX(0) }
+    20%   { transform: translateX(-3px) }
+    40%   { transform: translateX(+12px) }
+    100%  { transform: translateX(0) }
+  }
+  @keyframes u-space {
+    0%,30%  { margin-left:0px }
+    50%,100%{ margin-left: 120px }
+  }
+  @keyframes u-move {
+    0%    { margin-left:0px }
+    20%   { padding-top: 15px}
+    60%   { padding-top: 0px}
+    60%   { margin-left: 120px }
+    100%  { margin-left:0px }
+  }
+  @keyframes u2-move {
+    0%,100% { opacity:0.7 }
+    0%    { margin-left: 0px }
+    20%   { padding-top: 13px}
+    60%   { padding-top: 0px}
+    60%   { margin-left: 120px }
+    100%  { margin-left:0px }
+  }
+  @keyframes u-space-end {
+    0%    { margin-left: 120px }
+    60%   {margin-left: 0px }
+    100%  { margin-left: 120px }
+  }
+  @keyframes u-space-theend {
+    0%    { margin-left: 120px }
+    100%  { margin-left: 0px}
+  }
+
+}
+
+.ReactModal__Content {
+  background-color: @ffe-farge-hvit;
+  margin: auto;
+  position: relative;
+  inset: @ffe-spacing-md!important;
+  z-index: 4;
+
+  @media (min-width: @breakpoint-md) {
+    width: 75%;
+    height: 70%;
+  }
+}
+
+.ReactModal__Body--open {
+  .smud-talks__speaker-image--pair img {
+    display : none;
+  }
+}
+
+.ReactModal__Overlay {
+  background: rgba(0, 0, 0, .75)!important;
+  z-index: 4;
+}
+
+.smud-close {
+  position: absolute;
+  right: @ffe-spacing-md;
+  top: @ffe-spacing-md;
+  z-index: 5;
+}
