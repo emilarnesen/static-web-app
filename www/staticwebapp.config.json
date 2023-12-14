@@ -8,19 +8,25 @@
     "responseOverrides": {
       "401": {
         "statusCode": 302,
-        "redirect": "/.auth/login/aad"
+        //"redirect": "/.auth/login/aad"
+        "redirect": "/.auth/login/aad?post_login_redirect_uri=.referrer"
       }
     },
+    "networking": {
+    },
     "auth": {
-        "identityProviders": {
-          "azureActiveDirectory": {
-            "userDetailsClaim": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
-            "registration": {
-              "openIdIssuer": "https://login.microsoftonline.com/491e8cc4-2204-4312-8565-17f85046df01",
-              "clientIdSettingName": "AZURE_CLIENT_ID",
-              "clientSecretSettingName": "AZURE_CLIENT_SECRET"
-            }
+      "identityProviders": {
+        "azureActiveDirectory": {
+          "userDetailsClaim": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+          "registration": {
+            "openIdIssuer": "https://login.microsoftonline.com/491e8cc4-2204-4312-8565-17f85046df01",
+            "clientIdSettingName": "AZURE_CLIENT_ID",
+            "clientSecretSettingName": "AZURE_CLIENT_SECRET"
           }
         }
       }
+    },
+    "globalHeaders": {
+      "Cache-Control": "no-cache"
+    }
   }
