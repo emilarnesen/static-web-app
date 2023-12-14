@@ -22,7 +22,7 @@ on:
 jobs:
   build_and_deploy:
     if: github.event_name == 'push'
-    runs-on: github-org-runner
+    runs-on: [ubuntu-latest]
     name: Build and Deploy
     steps:
       - uses: actions/checkout@v4
